@@ -88,7 +88,7 @@ class BookingSerializer(serializers.ModelSerializer):
                     "End date must be after start date"
                 )
             
-            # Check for overlapping bookings (exclude current instance if updating)
+            # Csheck for overlapping bookings (exclude current instance if updating)
             overlapping_bookings = Booking.objects.filter(
                 property=property_obj,
                 start_date__lt=end_date,
